@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Project 3</title>
+  </head>
+  <body>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+          <strong>Project 3</strong>
+        </a>
+      </div>
+    </div>
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">Text Analysis</h1>
+          <br>
+          <p class="lead text-muted">
+          Welcome to Simple Text Analysis API
+          </p>
+          <br>
+          <ul style="list-style-type: none;">
+            <li>
+                <p ALIGN=Left>단락 또는 문장을 입력하면 감정분석과 개체명 인식(NER)을 실시합니다.<br></p>
+                <p ALIGN=Left>(영문만 가능. NER은 구글 및 위키피디아 (존재하는 경우) 검색 결과를 제공합니다.) <br><br></p>
+            </li>
+            <li>
+                <p ALIGN=Left>Reference:<br></p>
+                <p ALIGN=Left>Sentiment Analysis:<br><A HREF="https://github.com/cjhutto/vaderSentiment">VADER</A><br></p>
+                <p ALIGN=Left>Named-Entity Recognition:<br><A HREF="https://spacy.io/usage/linguistic-features#named-entities">Spacy</A><br></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <form action = "http://localhost:5000/result" method = "POST">
+        <p>Sentence or Paragraph <input type = "text" name = "data" /></p>
+        <p> <input type = "submit" value = "submit" /></p>
+     </form>
+    </section>
+ </body>
+</html>
+

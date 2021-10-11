@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Project 3</title>
+  </head>
+  <body>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+          <strong>Project 3</strong>
+        </a>
+      </div>
+    </div>
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">Result</h1>
+          <br>
+          <p class="lead text-muted">
+          Thanks for waiting! Here is your request.
+          </p>
+        </div>
+      </div>
+    <div class="print-text"> Input : {{text}} <br>
+    </div>
+    <div class="print-sa"> {% if sentiment >= 0.05 %}
+        <p></p>Score: {{sentiment}}, Sentiment : positive <br></p>
+        {% elif (sentiment > -0.05) and (sentiment < 0.05) %}
+        <p>Score: {{sentiment}}, Sentiment : neutral <br></p>
+        {% else %}
+        <p>Score: {{sentiment}}, Sentiment : negative <br></p>
+        {% endif %}
+    </div>
+    <div class="print-search"> Search Result <br>
+        <UL>
+            {% if output[0]|length <=4 %}
+            <p> Named Entity: Not available <br></p>
+            {% else %}
+            {%for item in output %}
+            <p> Named Entity#{{loop.index}} : {{item.entity}}, {{item.query}} <br></p>
+            <p> Google Search: Top 3 items <br></p>
+            <li>Title : {{item.output_0.title}} <br> Link : {{item.output_0.link}} <br> 
+                <p ALIGN=Left>Text : {{item.output_0.text}} <br></p>
+            <li>Title : {{item.output_1.title}} <br> Link : {{item.output_1.link}} <br> 
+                <p ALIGN=Left>Text : {{item.output_0.text}} <br></p>
+            <li>Title : {{item.output_2.title}} <br> Link : {{item.output_2.link}} <br> 
+                <p ALIGN=Left>Text : {{item.output_0.text}} <br></p>
+            <p>Wikipedia Search: (only 1 page showing for reference) <br></p>
+            <p ALIGN=Left>text : {{item.wiki_0.text}} <br></p>
+
+        {% endfor %}
+        {% endif %}
+    </li>
+    </UL>
+    </div>
+</section>
+ </body>
+</html>
+
